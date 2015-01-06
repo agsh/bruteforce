@@ -1,0 +1,10 @@
+{
+  "name": "bruteforce",
+  "version": "0.0.1",
+  "author": "Andrew D.Laptev <a.d.laptev@gmail.com>",
+  "description": "ONVIF client",
+  "main": "bruteforce.js",
+  "engines": {
+    "node": ">=0.11"
+  }
+}
