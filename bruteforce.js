@@ -5,7 +5,12 @@ var Brute = function(options) {
     this.endPoint = options.endPoint || [];
 };
 
-Brute.prototype.fromStringToNum = function(string) {
+/**
+ * Returns numerical representation of the string according to character table
+ * @param {string} string
+ * @returns {number}
+ */
+Brute.prototype.fromStringToNumber = function(string) {
     var s = string.split(''), l = s.length, num = 0;
     for (var i = l; i--; ) {
         var indexOf = this.characterSet.indexOf(s[i]);
@@ -17,4 +22,9 @@ Brute.prototype.fromStringToNum = function(string) {
     return num;
 };
 
-var b = new Brute();
+/**
+ * Returns string based on the number and character tab
+ */
+Brute.prototype.fromNumberToString = function(number) {
+    return (number > 0) ? this.fromNumberToString(Math.floor((number - 1) / this.length)) + this.characterSet[(number - 1) % this.length] : ''; 
+};
